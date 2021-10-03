@@ -40,8 +40,14 @@ export const checkLocalStorage = () => {
 
 const checkUserList = () => {
   const userList = JSON.parse(localStorage.getItem(USERLIST_KEY));
-  if (userList.length > 11) {
-    return false;
+
+  if (userList !== null) {
+    if (userList.length > 11) {
+      return false;
+    }
+    else {
+      return true;
+    }
   }
   else {
     return true;
@@ -54,7 +60,6 @@ const loadUserList = () => {
 }
 
 const onClickUserTag = (e) => {
-  console.dir(e.target.firstChild.textContent)
   localStorage.setItem(USER_KEY, e.target.firstChild.textContent);
   checkLocalStorage();
 }
