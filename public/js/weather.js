@@ -9,6 +9,10 @@ const getWeatherInfo = (lat, lon) => {
       TEMPERATURE.innerHTML = `${Math.round(data.main.temp)} ℃`;
       LOCATION.innerHTML = `${data.name}, ${data.sys.country}`;
 
+      if (TEMPERATURE.previousElementSibling !== null) {
+        TEMPERATURE.previousElementSibling.remove();
+      }
+      
       WEATHER.prepend(getWeatherIcon(data.weather[0]));
     });
 };
