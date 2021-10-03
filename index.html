@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do List</title>
+  <link rel="stylesheet" href="./public/css/index.css">
+</head>
+
+<body>
+  <div id="login" class="hidden">
+    <h1>Hello! What is your name?</h1>
+    <form method="get" id="userform">
+      <input type="text" placeholder="Please write your name or nickname." required id="username" maxlength="10"
+        autocomplete="off">
+    </form>
+    <div id="savedUser"></div>
+  </div>
+  <div id="content" class="hidden">
+    <div id="timer">
+      <div class="date"></div>
+      <div class="time"></div>
+    </div>
+    <div id="weather">
+      <div class="weather">
+        <div class="temp"></div>
+      </div>
+      <div class="location"></div>
+    </div>
+    <div id="userInfo">
+      <div class="username"></div>
+      <form method="get" id="todoform">
+        <input type="text" required placeholder="please write your todo" maxlength="50" autocomplete="off"
+          id="todoInput">
+      </form>
+      <div id="todoList"></div>
+    </div>
+    <button id="logout">logout</button>
+  </div>
+  <script type="module" src="./public/js/index.js"></script>
+  <script type="module" src="./public/js/background.js"></script>
+  <script type="module" src="./public/js/weather.js"></script>
+  <script type="module" src="./public/js/timer.js"></script>
+  <script type="module" src="./public/js/todo.js"></script>
+  <script type="module" src="./public/js/logout.js"></script>
+</body>
+
+</html>
