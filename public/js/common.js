@@ -24,11 +24,11 @@ export const TODOLIST = document.querySelector('#todoList');
 export const LOGOUTBTN = document.querySelector('button#logout');
 
 export const WEATHER_URL = (lat, lon) => {
-  return `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${OPENWEATHER_APIKEY}&units=metric&lang=kr`;
+  return `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${OPENWEATHER_APIKEY}&units=metric&lang=kr`;
 }
 
 export const WEATHER_ICON_URL = (icon) => {
-  return `http://openweathermap.org/img/wn/${icon}@2x.png`;
+  return `https://openweathermap.org/img/wn/${icon}@2x.png`;
 }
 
 export const PIXABAY_URL = () => {

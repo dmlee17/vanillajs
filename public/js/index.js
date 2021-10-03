@@ -74,23 +74,26 @@ const onClickDeleteUser = (e) => {
 }
 
 const paintUserTags = (userList) => {
+
   USERLIST.innerHTML = '';
 
-  for (const user of userList) {
-    
-    const userdiv = document.createElement("div");
-    userdiv.innerHTML = user;
-    userdiv.style.background = `${"#" + Math.round(Math.random() * 0xffffff).toString(16) + "55"}`;
-    userdiv.classList.add('userDiv');
-    userdiv.addEventListener('click', onClickUserTag);
-
-    const deleteIcon = document.createElement('div');
-    deleteIcon.innerHTML = '❌';
-    deleteIcon.classList.add('deleteIcon');
-    deleteIcon.addEventListener('click', onClickDeleteUser);
-
-    userdiv.appendChild(deleteIcon);
-    USERLIST.appendChild(userdiv);
+  if (userList !== null) {
+    for (const user of userList) {
+      
+      const userdiv = document.createElement("div");
+      userdiv.innerHTML = user;
+      userdiv.style.background = `${"#" + Math.round(Math.random() * 0xffffff).toString(16) + "55"}`;
+      userdiv.classList.add('userDiv');
+      userdiv.addEventListener('click', onClickUserTag);
+  
+      const deleteIcon = document.createElement('div');
+      deleteIcon.innerHTML = '❌';
+      deleteIcon.classList.add('deleteIcon');
+      deleteIcon.addEventListener('click', onClickDeleteUser);
+  
+      userdiv.appendChild(deleteIcon);
+      USERLIST.appendChild(userdiv);
+    }
   }
 }
 
